@@ -14,5 +14,7 @@
     "prettier/vue"
   ],
   "plugins": ["vue"],
-  "rules": {}
+  "rules": {
+    "semi": 1
+  }
 }

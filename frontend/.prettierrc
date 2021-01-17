@@ -1,0 +1,7 @@
+{
+  "semi": true,
+  "singleQuote": true,
+  "css.validate": false,
+  "scss.validate": false,
+  "vetur.validation.style": false
+}
