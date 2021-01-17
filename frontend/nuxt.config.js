@@ -1,4 +1,4 @@
-const strapiBaseUri = process.env.API_URL || "http://localhost:1337";
+const strapiBaseUri = process.env.API_URL || 'http://localhost:1337';
 
 export default {
   srr: false,
@@ -7,13 +7,13 @@ export default {
   },
   head: {
     meta: [
-      { charset: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
+      { charset: 'utf-8' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
     ],
     link: [
       {
-        rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css?family=Staatliches",
+        rel: 'stylesheet',
+        href: 'https://fonts.googleapis.com/css?family=Staatliches',
       },
     ],
   },
@@ -21,35 +21,38 @@ export default {
    ** Global CSS
    */
   css: [
-    "uikit/dist/css/uikit.min.css",
-    "uikit/dist/css/uikit.css",
-    "@assets/css/main.css",
+    'uikit/dist/css/uikit.min.css',
+    'uikit/dist/css/uikit.css',
+    '@assets/css/main.css',
   ],
-  plugins: [{ src: "~/plugins/uikit.js", ssr: false }],
-  modules: ["@nuxtjs/markdownit", "@nuxtjs/strapi"],
+  plugins: [
+    { src: '~/plugins/uikit.js', ssr: false },
+    '@/plugins/cloudinary.js',
+  ],
+  modules: ['@nuxtjs/markdownit', '@nuxtjs/strapi'],
   strapi: {
     url: strapiBaseUri,
     entities: [
       {
-        name: "articles",
-        type: "collection",
+        name: 'articles',
+        type: 'collection',
       },
       {
-        name: "categories",
-        type: "collection",
+        name: 'categories',
+        type: 'collection',
       },
       {
-        name: "homepage",
-        type: "single",
+        name: 'homepage',
+        type: 'single',
       },
       {
-        name: "global",
-        type: "single",
+        name: 'global',
+        type: 'single',
       },
     ],
   },
   markdownit: {
-    preset: "default",
+    preset: 'default',
     linkify: true,
     breaks: true,
     injected: true,
