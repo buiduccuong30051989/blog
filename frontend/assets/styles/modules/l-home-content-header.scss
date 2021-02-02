@@ -1,0 +1,32 @@
+.l-content {
+  &-header {
+    @apply relative pt-48 mb-16;
+
+    .header {
+      &-heading {
+        @apply leading-none font-semibold;
+        font-size: 80px;
+      }
+
+      &-meow {
+        @apply absolute right-0;
+        width: 200px;
+        bottom: 14px;
+
+        svg {
+          height: 200px;
+          width: 200px;
+        }
+      }
+
+      &-line {
+        height: 15px;
+        @apply bg-black w-full;
+      }
+    }
+  }
+}
+
+.eye {
+  transform-box: fill-box;
+}

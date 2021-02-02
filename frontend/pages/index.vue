@@ -1,51 +1,98 @@
 <template>
-  <div>
-    <div class="uk-section">
-      <div class="uk-container uk-container-large">
-        <h1>{{ homepage.hero.title }}</h1>
-        <Articles :articles="articles" />
+  <div class="p-home" @mousemove="mouseMove">
+    <HomeCover />
+    <div class="l-content">
+      <HomeHeader />
+      <div class="l-sumary">
+        <div class="l-sumary-top">
+          <p>
+            Hi there 👋, welcome to my tiny blog. I’m Bui Duc Cuong, born in
+            1989. Currently i’m a Frontend Deveoper at
+            <a href="#">Sun*</a> (Framgia inc).
+          </p>
+          <br />
+          <p>
+            So, most of time, i working with html/css and Javascript also to
+            building UI & UX of Website, i love my family, my job, and
+            <a href="#">friends</a> too.
+          </p>
+          <p>Well, there is nothing much to say...</p>
+          <br />
+          <p>
+            You can contact me via my <a href="#">personal email</a>, and here
+            is my <a href="#">github</a>.
+          </p>
+        </div>
+
+        <div class="l-sumary-bottom text-right">
+          <p>
+            Hopeing this place can bring to you somethings usefuls, then let me
+            know by tab here
+            <span class="heart-wrap">
+              <i
+                for="toggle-heart"
+                class="heart"
+                :class="{ checked: checked }"
+                @click="checked = !checked"
+                >❤</i
+              >
+            </span>
+            Thank you!
+          </p>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import Articles from "../components/Articles";
-import { getMetaTags } from "../utils/seo";
-import { getStrapiMedia } from "../utils/medias";
+import { random } from '../utils/random';
+import { homeCoverImages } from '../utils/constants';
+import HomeHeader from '@/components/compound/HomeHeader';
+import HomeCover from '@/components/compound/HomeCover';
 
 export default {
   components: {
-    Articles,
+    HomeHeader,
+    HomeCover,
   },
-  async asyncData({ $strapi }) {
+  async fetch() {
+    this.categories = await this.$strapi.find('categories');
+  },
+  data() {
     return {
-      articles: await $strapi.find("articles"),
-      homepage: await $strapi.find("homepage"),
-      global: await $strapi.find("global"),
+      checked: false,
+      categories: [],
+      openMenu: false,
     };
   },
-  head() {
-    const { seo } = this.homepage;
-    const { defaultSeo, favicon, siteName } = this.global;
-
-    // Merge default and article-specific SEO data
-    const fullSeo = {
-      ...defaultSeo,
-      ...seo,
-    };
-
-    return {
-      titleTemplate: `%s | ${siteName}`,
-      title: fullSeo.metaTitle,
-      meta: getMetaTags(fullSeo),
-      link: [
-        {
-          rel: "favicon",
-          href: getStrapiMedia(favicon.url),
-        },
-      ],
-    };
+  computed: {
+    cover: function () {
+      return homeCoverImages[this.random(0, homeCoverImages.length)];
+    },
+  },
+  methods: {
+    random,
+    mouseMove: function (e) {
+      const eye = document.querySelectorAll('.eye');
+      const x =
+        eye[0].getBoundingClientRect().x +
+        eye[0].getBoundingClientRect().width / 2;
+      const y =
+        eye[0].getBoundingClientRect().y +
+        eye[0].getBoundingClientRect().height / 2;
+      const rad = Math.atan2(e.pageX - x, e.pageY - y);
+      const rot = rad * (180 / Math.PI) * 1 + 240;
+      if (Math.abs(x - e.pageX) >= 15 && Math.abs(y - e.pageY) >= 15) {
+        for (let i = 0; i < eye.length; ++i) {
+          eye[i].style.transform = `rotate(${rot}deg)`;
+        }
+      }
+    },
   },
 };
 </script>
+
+<style lang="scss" scoped>
+@import '~/assets/styles/pages/home.scss';
+</style>

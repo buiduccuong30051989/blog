@@ -1,0 +1,38 @@
+.l-overlay {
+  @apply absolute top-0 left-0 w-full h-full;
+  z-index: 2;
+  backdrop-filter: blur(10px);
+  background-color: rgba($black, 0.5);
+
+  &-enter,
+  &-leave-to {
+    opacity: 0;
+  }
+
+  &-enter-active,
+  &-leave-active {
+    transition: all 0.5s;
+  }
+
+  &-inner {
+    @apply relative flex w-full h-full justify-center items-center;
+    z-index: 3;
+  }
+
+  .l-navigation {
+    @apply text-2xl text-center;
+    letter-spacing: 2px;
+
+    li:not(:last-of-type) {
+      margin-bottom: 10px;
+    }
+
+    a {
+      @apply text-white;
+
+      &:hover {
+        @apply text-primary;
+      }
+    }
+  }
+}

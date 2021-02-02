@@ -1,0 +1,21 @@
+// ======================================================
+// Abstracts :: Variables
+// ======================================================
+
+// Fonts
+// >> Font-family
+$font-family-base: 'Oswald', sans-serif;
+
+// >> Font-icon
+$icon-font-path: '~assets/fonts';
+
+// Shadow
+
+// Colors
+$primary: #2a9c7a;
+$black: #000;
+$white: #fff;
+
+$colorsTheme: (
+  'primary': $primary,
+);

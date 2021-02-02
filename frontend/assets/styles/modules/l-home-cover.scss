@@ -1,0 +1,42 @@
+.l-cover {
+  img {
+    @apply w-full h-full object-cover object-center;
+  }
+
+  &-header {
+    @apply flex justify-between items-center p-8;
+    @apply absolute top-0 left-0 w-full z-10;
+  }
+
+  &-footer {
+    @apply hidden;
+    @apply absolute bottom-0 left-0 w-full p-8 pb-4 text-xs text-gray-500;
+    background: linear-gradient(
+      to top,
+      rgba($white, 1) 20%,
+      rgba($white, 0) 100%
+    );
+  }
+}
+
+.c-logo {
+  letter-spacing: 2px;
+  @apply cursor-pointer;
+
+  h2 {
+    padding: 2px 8px;
+    @apply bg-white text-black font-light text-2xl;
+    mix-blend-mode: screen;
+  }
+}
+
+.c-menu-btn {
+  &:focus {
+    @apply outline-none;
+  }
+
+  svg {
+    width: 40px;
+    fill: $white;
+  }
+}

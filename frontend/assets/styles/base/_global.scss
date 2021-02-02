@@ -1,0 +1,11 @@
+// ======================================================
+// Base :: Global like html, body, img, a, ul
+// ======================================================
+
+html {
+  font-family: $font-family-base;
+}
+
+body {
+  @apply text-sm font-light;
+}

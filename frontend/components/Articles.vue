@@ -1,28 +1,17 @@
 <template>
   <div>
-    <div class="uk-child-width-1-2" uk-grid>
-      <div>
-        <ArticleCard
-          v-for="article in leftArticles"
-          :key="article.id"
-          :article="article"
-        />
-      </div>
-      <div>
-        <div class="uk-child-width-1-2@m uk-grid-match" uk-grid>
-          <ArticleCard
-            v-for="article in rightArticles"
-            :key="article.id"
-            :article="article"
-          />
-        </div>
-      </div>
+    <div class="mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
+      <ArticleCard
+        v-for="article in articles"
+        :key="article.id"
+        :article="article"
+      />
     </div>
   </div>
 </template>
 
 <script>
-import ArticleCard from "./ArticleCard";
+import ArticleCard from './ArticleCard';
 
 export default {
   components: {
