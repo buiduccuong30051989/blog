@@ -1,0 +1,26 @@
+.l-header {
+  @apply flex justify-between items-center p-8;
+  @apply absolute top-0 left-0 w-full z-10;
+}
+
+.c-logo {
+  letter-spacing: 2px;
+  @apply cursor-pointer;
+
+  h2 {
+    padding: 2px 8px;
+    @apply bg-white text-black font-light text-2xl;
+    mix-blend-mode: screen;
+  }
+}
+
+.c-menu-btn {
+  &:focus {
+    @apply outline-none;
+  }
+
+  svg {
+    width: 40px;
+    fill: $white;
+  }
+}

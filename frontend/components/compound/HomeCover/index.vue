@@ -1,19 +1,7 @@
 <template>
   <div class="l-cover">
-    <div class="l-cover-header">
-      <div class="c-logo">
-        <h2>tiny-things</h2>
-      </div>
-      <button class="c-menu-btn" @click="openMenu = !openMenu">
-        <Compass v-show="!openMenu" />
-        <Close v-show="openMenu" />
-      </button>
-    </div>
-
+    <Header />
     <img :src="cover" alt="cover" />
-
-    <Overlay :open-menu="openMenu" />
-
     <div class="l-cover-footer">
       <p>
         This blog was made by me, using strapi & nuxt js with ❤. I create this
@@ -31,22 +19,17 @@
 <script>
 import { random } from '@/utils/random';
 import { homeCoverImages } from '@/utils/constants';
-import Compass from '~/assets/images/compass.svg?inline';
-import Close from '~/assets/images/close.svg?inline';
-import Overlay from './overlay';
+import Header from '../Header';
+// import Compass from '~/assets/images/compass.svg?inline';
+// import Close from '~/assets/images/close.svg?inline';
+// import Overlay from './overlay';
 
 export default {
   components: {
-    Compass,
-    Close,
-    Overlay,
-  },
-  async fetch() {
-    this.categories = await this.$strapi.find('categories');
+    Header,
   },
   data() {
     return {
-      categories: [],
       openMenu: false,
     };
   },
@@ -61,6 +44,6 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import '~/assets/styles/modules/l-home-cover.scss';
 </style>

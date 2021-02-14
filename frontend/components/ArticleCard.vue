@@ -2,22 +2,24 @@
   <nuxt-link
     :key="article.id"
     :to="{ name: 'articles-slug', params: { slug: article.slug } }"
-    class="uk-link-reset"
   >
-    <div class="flex flex-col rounded-lg shadow-lg overflow-hidden">
+    <div class="flex flex-col shadow overflow-hidden">
       <div class="flex-shrink-0">
         <img :src="getStrapiMedia(article.image.url)" />
       </div>
-      <div class="flex-1 bg-white p-6 flex flex-col justify-between">
+      <div class="flex-1 bg-white p-6 pt-2 flex flex-col justify-between">
         <div class="flex-1">
-          <p class="text-sm font-medium text-indigo-600">
+          <!-- <p class="text-sm font-medium text-indigo-600">
             <a v-if="article.category" href="#" class="hover:underline">
               {{ article.category.name }}
             </a>
-          </p>
+          </p> -->
           <a href="#" class="block mt-2">
-            <p class="text-xl font-semibold text-gray-900">
+            <p class="text-xl font-semibold text-gray-900 mb-2">
               {{ article.title }}
+            </p>
+            <p class="text-sm text-gray-900">
+              {{ article.description }}
             </p>
             <!-- <p
               v-if="article.content"

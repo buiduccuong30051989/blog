@@ -32,9 +32,14 @@ export default {
   async fetch() {
     this.categories = await this.$strapi.find('categories');
   },
+  data() {
+    return {
+      categories: [],
+    };
+  },
 };
 </script>
 
 <style lang="scss">
-@import '~/assets/styles/modules/l-home-overlay.scss';
+@import '~/assets/styles/modules/l-header-overlay.scss';
 </style>

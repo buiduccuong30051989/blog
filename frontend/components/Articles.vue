@@ -1,12 +1,10 @@
 <template>
-  <div>
-    <div class="mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
-      <ArticleCard
-        v-for="article in articles"
-        :key="article.id"
-        :article="article"
-      />
-    </div>
+  <div class="p-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
+    <ArticleCard
+      v-for="article in articles"
+      :key="article.id"
+      :article="article"
+    />
   </div>
 </template>
 

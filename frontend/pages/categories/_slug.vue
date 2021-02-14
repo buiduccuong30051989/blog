@@ -1,10 +1,16 @@
 <template>
   <div>
+    <Header />
     <client-only>
-      <div class="uk-section">
-        <div class="uk-container uk-container-large">
-          <h1>{{ category.name }}</h1>
-          <Articles :articles="articles || []" />
+      <div class="p-cat">
+        <div class="p-cat__header">
+          <h1 class="p-cat__title">{{ category.name }}</h1>
+          <img :src="cover" alt="cover" />
+        </div>
+        <div class="p-cat__content">
+          <div class="p-cat__list">
+            <Articles :articles="articles || []" />
+          </div>
         </div>
       </div>
     </client-only>
@@ -12,13 +18,17 @@
 </template>
 
 <script>
+import { random } from '@/utils/random';
 import Articles from '../../components/Articles';
 import { getMetaTags } from '../../utils/seo';
 import { getStrapiMedia } from '../../utils/medias';
+import { catCoverImage } from '@/utils/constants';
+import Header from '../../components/compound/Header';
 
 export default {
   components: {
     Articles,
+    Header,
   },
   async asyncData({ $strapi, params }) {
     const matchingCategories = await $strapi.find('categories', {
@@ -31,6 +41,14 @@ export default {
       }),
       global: await $strapi.find('global'),
     };
+  },
+  computed: {
+    cover: function () {
+      return catCoverImage[this.random(0, catCoverImage.length)];
+    },
+  },
+  methods: {
+    random,
   },
   head() {
     const { defaultSeo, favicon, siteName } = this.global;
@@ -56,3 +74,7 @@ export default {
   },
 };
 </script>
+
+<style lang="scss" scoped>
+@import '~/assets/styles/pages/cat.scss';
+</style>
