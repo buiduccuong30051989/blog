@@ -5042,6 +5042,11 @@ hex-color-regex@^1.1.0:
   resolved "https://registry.yarnpkg.com/hex-color-regex/-/hex-color-regex-1.1.0.tgz#4c06fccb4602fe2602b3c93df82d7e7dbf1a8a8e"
   integrity sha512-l9sfDFsuqtOqKDsQdqrMRk0U85RZc0RtOR9yPI7mRVOa4FsR/BVnZ0shmQRM96Ji99kYZP/7hn1cedc1+ApsTQ==
 
+highlight.js@^10.2.0:
+  version "10.6.0"
+  resolved "https://registry.yarnpkg.com/highlight.js/-/highlight.js-10.6.0.tgz#0073aa71d566906965ba6e1b7be7b2682f5e18b6"
+  integrity sha512-8mlRcn5vk/r4+QcqerapwBYTe+iPL5ih6xrNylxrnBdHQiijDETfXX7VIxC3UiCRiINBJfANBAsPzAvRQj8RpQ==
+
 highlight.js@^9.12.0:
   version "9.18.5"
   resolved "https://registry.yarnpkg.com/highlight.js/-/highlight.js-9.18.5.tgz#d18a359867f378c138d6819edfc2a8acd5f29825"
@@ -6133,6 +6138,11 @@ lodash._reinterpolate@^3.0.0:
   resolved "https://registry.yarnpkg.com/lodash._reinterpolate/-/lodash._reinterpolate-3.0.0.tgz#0ccf2d89166af03b3663c796538b75ac6e114d9d"
   integrity sha1-DM8tiRZq8Ds2Y8eWU4t1rG4RTZ0=
 
+lodash.flow@^3.5.0:
+  version "3.5.0"
+  resolved "https://registry.yarnpkg.com/lodash.flow/-/lodash.flow-3.5.0.tgz#87bf40292b8cf83e4e8ce1a3ae4209e20071675a"
+  integrity sha1-h79AKSuM+D5OjOGjrkIJ4gBxZ1o=
+
 lodash.kebabcase@^4.1.1:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/lodash.kebabcase/-/lodash.kebabcase-4.1.1.tgz#8489b1cb0d29ff88195cceca448ff6d6cc295c36"
@@ -6281,6 +6291,14 @@ marcosc-async@^3.0.4:
   version "3.0.5"
   resolved "https://registry.yarnpkg.com/marcosc-async/-/marcosc-async-3.0.5.tgz#41e6d56c656c811859d34b97a0a26093f71dc360"
   integrity sha1-QebVbGVsgRhZ00uXoKJgk/cdw2A=
+
+markdown-it-highlightjs@^3.4.0:
+  version "3.4.0"
+  resolved "https://registry.yarnpkg.com/markdown-it-highlightjs/-/markdown-it-highlightjs-3.4.0.tgz#1a75edd02f9e564f800052eac2b5aefa8230f8d4"
+  integrity sha512-JES5P8ll3Vpf6a4C0FlsaO1opOaH53Rbvphj2IAON29v33cHNUiwXBSaC+bThUiLp6m3UEZ4vv579CHSElWSdw==
+  dependencies:
+    highlight.js "^10.2.0"
+    lodash.flow "^3.5.0"
 
 markdown-it@^8.3.1:
   version "8.4.2"

@@ -105,6 +105,8 @@ First, if i have hundreds page, it could be, with 100 articles, i will have 100 
 Second, i relize, when i update content in strapi cms from heroku, my frontend, didn't update. Right!, because it already generate to html in netlify. If i'm not deploy agian, the current page will not updated.
 For ex, in home, i have 5 article, i add one more from cms, but, it's not trigger re deploy in frontend, so, in frontend, it still show 5, not 6. It only rerender when i router to home from another router.
 
+Adding markdown-it highlight follow: https://www.samuelcoe.com/blog/18-02-25-nuxt-hightlight/
+
 Well it's not what i want.
 Right now, i find a solutions for that, this is webhook
 I follow the instruction here: https://www.netlify.com/blog/2020/08/11/deploy-a-strapi-and-react-blog-on-netlify/

@@ -21,7 +21,10 @@ export default {
   /*
    ** Global CSS
    */
-  css: ['~/assets/styles/main.scss'],
+  css: [
+    '~/assets/styles/main.scss',
+    { src: '~/node_modules/highlight.js/styles/hopscotch.css', lang: 'css' },
+  ],
   plugins: ['@/plugins/cloudinary.js'],
   components: true,
   buildModules: [
@@ -55,8 +58,9 @@ export default {
     preset: 'default',
     linkify: true,
     breaks: true,
-    injected: true,
     html: true,
+    injected: true,
+    use: ['markdown-it-highlightjs'],
   },
   generate: {
     fallback: true,
