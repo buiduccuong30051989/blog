@@ -60,7 +60,7 @@ export default {
     breaks: true,
     html: true,
     injected: true,
-    use: ['markdown-it-highlightjs'],
+    use: ['markdown-it-highlightjs', 'markdown-it-playground'],
   },
   generate: {
     fallback: true,

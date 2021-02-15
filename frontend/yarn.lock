@@ -6300,6 +6300,11 @@ markdown-it-highlightjs@^3.4.0:
     highlight.js "^10.2.0"
     lodash.flow "^3.5.0"
 
+markdown-it-playground@^0.0.5:
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/markdown-it-playground/-/markdown-it-playground-0.0.5.tgz#886b3ea361af7d0f5c5a71e61684f867b34e11c3"
+  integrity sha1-iGs+o2GvfQ9cWnHmFoT4Z7NOEcM=
+
 markdown-it@^8.3.1:
   version "8.4.2"
   resolved "https://registry.yarnpkg.com/markdown-it/-/markdown-it-8.4.2.tgz#386f98998dc15a37722aa7722084f4020bdd9b54"
