@@ -8,7 +8,7 @@
       <div
         v-if="article.content"
         id="editor"
-        class="text-sm text-gray-500 article-content markdown-body"
+        class="text-sm text-gray-700 article-content markdown-body"
         v-html="$md.render(article.content)"
       ></div>
     </div>

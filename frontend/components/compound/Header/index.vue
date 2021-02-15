@@ -1,9 +1,9 @@
 <template>
   <div>
     <div class="l-header">
-      <div class="c-logo">
+      <nuxt-link to="/" class="c-logo">
         <h2>tiny-things</h2>
-      </div>
+      </nuxt-link>
       <button class="c-menu-btn" @click="openMenu = !openMenu">
         <Compass v-show="!openMenu" />
         <Close v-show="openMenu" />

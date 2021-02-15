@@ -47,7 +47,6 @@
 
 <script>
 import { random } from '../utils/random';
-import { homeCoverImages } from '../utils/constants';
 import HomeHeader from '@/components/compound/HomeHeader';
 import HomeCover from '@/components/compound/HomeCover';
 
@@ -65,11 +64,6 @@ export default {
       categories: [],
       openMenu: false,
     };
-  },
-  computed: {
-    cover: function () {
-      return homeCoverImages[this.random(0, homeCoverImages.length)];
-    },
   },
   methods: {
     random,

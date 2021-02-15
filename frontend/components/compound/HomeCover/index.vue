@@ -20,9 +20,6 @@
 import { random } from '@/utils/random';
 import { homeCoverImages } from '@/utils/constants';
 import Header from '../Header';
-// import Compass from '~/assets/images/compass.svg?inline';
-// import Close from '~/assets/images/close.svg?inline';
-// import Overlay from './overlay';
 
 export default {
   components: {
@@ -31,12 +28,8 @@ export default {
   data() {
     return {
       openMenu: false,
+      cover: homeCoverImages[this.random(0, homeCoverImages.length)],
     };
-  },
-  computed: {
-    cover: function () {
-      return homeCoverImages[this.random(0, homeCoverImages.length)];
-    },
   },
   methods: {
     random,

@@ -42,10 +42,10 @@ export default {
       global: await $strapi.find('global'),
     };
   },
-  computed: {
-    cover: function () {
-      return catCoverImage[this.random(0, catCoverImage.length)];
-    },
+  data() {
+    return {
+      cover: catCoverImage[this.random(0, catCoverImage.length)],
+    };
   },
   methods: {
     random,
