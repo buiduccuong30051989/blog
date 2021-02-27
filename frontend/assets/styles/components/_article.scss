@@ -921,3 +921,12 @@
     }
   }
 }
+
+.grid-gallery {
+  &-cols-2 {
+    & > p {
+      @apply grid gap-4;
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
