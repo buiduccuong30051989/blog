@@ -1,6 +1,5 @@
 <template>
   <div class="l-cover">
-    <Header />
     <img :src="cover" alt="cover" />
     <div class="l-cover-footer">
       <p>
@@ -19,12 +18,9 @@
 <script>
 import { random } from '@/utils/random';
 import { homeCoverImages } from '@/utils/constants';
-import Header from '../Header';
 
 export default {
-  components: {
-    Header,
-  },
+  components: {},
   data() {
     return {
       openMenu: false,

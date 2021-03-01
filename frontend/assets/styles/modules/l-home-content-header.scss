@@ -1,21 +1,49 @@
 .l-content {
   &-header {
-    @apply relative pt-48 mb-16;
+    @apply relative pt-24 mb-8;
+
+    @screen lg {
+      @apply pt-48 mb-16;
+    }
 
     .header {
       &-heading {
         @apply leading-none font-semibold;
-        font-size: 80px;
+        font-size: 48px;
+        padding-right: 120px;
+
+        @screen sm {
+          font-size: 80px;
+          padding-right: 200px;
+        }
       }
 
       &-meow {
         @apply absolute right-0;
-        width: 200px;
+        width: 100px;
         bottom: 14px;
 
         svg {
-          height: 200px;
+          width: 100px;
+          height: 100px;
+        }
+
+        @screen lg {
           width: 200px;
+
+          svg {
+            height: 200px;
+            width: 200px;
+          }
+        }
+
+        @screen sm {
+          width: 160px;
+
+          svg {
+            height: 160px;
+            width: 160px;
+          }
         }
       }
 
