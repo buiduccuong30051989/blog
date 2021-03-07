@@ -25,7 +25,7 @@
           </p>
         </div>
 
-        <div class="l-sumary-bottom text-right">
+        <div class="l-sumary-bottom text-center lg:text-right">
           <p>
             Hopeing this place can bring to you somethings usefuls, then let me
             know by tab here
@@ -90,6 +90,6 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import '~/assets/styles/pages/home.scss';
 </style>

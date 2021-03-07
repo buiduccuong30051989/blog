@@ -10,4 +10,19 @@
     @apply w-1/2 overflow-y-auto pt-8 pb-16 px-16 h-screen;
     margin-left: 50vw;
   }
+
+  ::v-deep .l-header,
+  ::v-deep .l-overlay {
+    @apply w-full;
+
+    @screen lg {
+      @apply w-1/2;
+    }
+  }
+
+  ::v-deep .l-header {
+    @media screen and (max-width: 1024px) {
+      @apply p-4;
+    }
+  }
 }

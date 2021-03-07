@@ -1,5 +1,6 @@
 <template>
   <div class="p-article">
+    <Header />
     <HomeCover :cover="getStrapiMedia(article.image.url)" />
     <div class="l-content">
       <p class="text-2xl font-medium text-gray-900 mb-4">

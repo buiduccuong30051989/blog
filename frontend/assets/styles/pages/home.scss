@@ -20,8 +20,8 @@
     }
   }
 
-  .l-header,
-  .l-overlay {
+  ::v-deep .l-header,
+  ::v-deep .l-overlay {
     @apply w-full;
 
     @screen lg {
@@ -29,7 +29,7 @@
     }
   }
 
-  .l-header {
+  ::v-deep .l-header {
     @media screen and (max-width: 1024px) {
       @apply p-4;
     }
@@ -37,7 +37,7 @@
 }
 
 .l-sumary {
-  @apply text-2xl flex flex-col flex-grow;
+  @apply text-base flex flex-col flex-grow;
 
   &-top {
     flex-grow: 1;
@@ -45,6 +45,10 @@
 
   &-bottom {
     @apply text-xs text-gray-500;
+  }
+
+  @screen sm {
+    @apply text-2xl;
   }
 }
 
@@ -58,7 +62,7 @@ $_precision: 10;
       $value: $value * $base;
     }
   }
-  @if $exp < 1{
+  @if $exp < 1 {
     @for $i from 0 through -$exp {
       $value: $value / $base;
     }
@@ -68,7 +72,7 @@ $_precision: 10;
 
 @function fact($num) {
   $fact: 1;
-  @if $num > 0{
+  @if $num > 0 {
     @for $i from 1 through $num {
       $fact: $fact * $i;
     }
@@ -77,10 +81,10 @@ $_precision: 10;
 }
 
 @function _to_unitless_rad($angle) {
-  @if unit($angle) == "deg" {
+  @if unit($angle) == 'deg' {
     $angle: $angle / 180deg * $pi;
   }
-  @if unit($angle) == "rad" {
+  @if unit($angle) == 'rad' {
     $angle: $angle / 1rad;
   }
   @return $angle;
@@ -233,4 +237,3 @@ $sparkle-r: 0.5 * $sparkle-d;
     @include sparkles(0);
   }
 }
-
