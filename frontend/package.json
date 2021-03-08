@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "@nuxtjs/markdownit": "^1.2.7",
-    "@nuxtjs/strapi": "^0.1.6",
+    "@nuxtjs/strapi": "^0.3.0",
     "@nuxtjs/svg": "^0.1.12",
     "@nuxtjs/tailwindcss": "^3.4.2",
     "@tailwindcss/postcss7-compat": "^2.0.2",

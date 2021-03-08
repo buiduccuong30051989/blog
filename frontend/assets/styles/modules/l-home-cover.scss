@@ -1,4 +1,6 @@
 .l-cover {
+  @apply hidden h-full;
+
   img {
     @apply w-full h-full object-cover object-center;
   }
@@ -11,5 +13,19 @@
       rgba($white, 1) 20%,
       rgba($white, 0) 100%
     );
+  }
+
+  @screen lg {
+    @apply block;
+  }
+}
+
+.l-home-cover {
+  @apply w-full;
+  @apply flex-shrink-0 relative;
+
+  @screen lg {
+    flex: 0 0 50%;
+    @apply block h-full;
   }
 }

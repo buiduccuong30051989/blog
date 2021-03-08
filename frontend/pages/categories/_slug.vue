@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="p-cat-wrapper">
     <Header />
     <client-only>
       <div class="p-cat">
@@ -19,17 +19,11 @@
 
 <script>
 import { random } from '@/utils/random';
-import Articles from '../../components/Articles';
-import { getMetaTags } from '../../utils/seo';
-import { getStrapiMedia } from '../../utils/medias';
+import { getMetaTags } from '@/utils/seo';
+import { getStrapiMedia } from '@/utils/medias';
 import { catCoverImage } from '@/utils/constants';
-import Header from '../../components/compound/Header';
 
 export default {
-  components: {
-    Articles,
-    Header,
-  },
   async asyncData({ $strapi, params }) {
     const matchingCategories = await $strapi.find('categories', {
       slug: params.slug,

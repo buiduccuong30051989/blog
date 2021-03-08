@@ -1,28 +1,14 @@
 .p-article {
-  @apply bg-white;
-  @apply h-screen flex overflow-hidden select-none;
-
-  .l-cover {
-    @apply w-1/2 flex-shrink-0 h-full fixed top-0 left-0;
+  @screen lg {
+    @apply bg-white;
+    @apply flex overflow-hidden select-none;
   }
 
   .l-content {
-    @apply w-1/2 overflow-y-auto pt-8 pb-16 px-16 h-screen;
-    margin-left: 50vw;
-  }
-
-  ::v-deep .l-header,
-  ::v-deep .l-overlay {
-    @apply w-full;
+    @apply p-8 pt-24;
 
     @screen lg {
-      @apply w-1/2;
-    }
-  }
-
-  ::v-deep .l-header {
-    @media screen and (max-width: 1024px) {
-      @apply p-4;
+      @apply w-1/2 overflow-y-auto pt-8 pb-16 px-16 h-screen;
     }
   }
 }

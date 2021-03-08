@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="l-header-wrapper">
     <div class="l-header">
       <nuxt-link to="/" class="c-logo">
         <h2>tiny-things</h2>

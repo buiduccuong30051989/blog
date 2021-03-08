@@ -1,37 +1,15 @@
 .p-home {
-  @apply bg-white;
-  @apply h-screen flex overflow-hidden select-none;
-
-  .l-cover {
-    @apply w-1/2 flex-shrink-0 h-full relative hidden;
-
-    @screen lg {
-      @apply block;
-    }
+  @screen lg {
+    @apply bg-white;
+    @apply h-screen flex overflow-hidden select-none;
   }
 
   .l-content {
-    @apply flex flex-col;
-    @apply w-full overflow-y-auto pb-4 px-4 h-screen;
+    @apply pb-4 px-4 min-h-screen;
 
     @screen lg {
       @apply w-1/2;
-      @apply pt-8 pb-4 px-16;
-    }
-  }
-
-  ::v-deep .l-header,
-  ::v-deep .l-overlay {
-    @apply w-full;
-
-    @screen lg {
-      @apply w-1/2;
-    }
-  }
-
-  ::v-deep .l-header {
-    @media screen and (max-width: 1024px) {
-      @apply p-4;
+      @apply pt-8 px-16;
     }
   }
 }
@@ -44,7 +22,7 @@
   }
 
   &-bottom {
-    @apply text-xs text-gray-500;
+    @apply text-xs text-gray-500 absolute bottom-0 left-0 w-full px-4 mb-4;
   }
 
   @screen sm {

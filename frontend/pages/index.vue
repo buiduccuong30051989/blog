@@ -1,6 +1,5 @@
 <template>
   <div class="p-home" @mousemove="mouseMove">
-    <Header />
     <HomeCover />
     <div class="l-content">
       <HomeHeader />
@@ -47,17 +46,9 @@
 </template>
 
 <script>
-import { random } from '../utils/random';
-import HomeHeader from '@/components/compound/HomeHeader';
-import HomeCover from '@/components/compound/HomeCover';
-import Header from '@/components/compound/Header';
+import { random } from '@/utils/random';
 
 export default {
-  components: {
-    HomeHeader,
-    HomeCover,
-    Header,
-  },
   async fetch() {
     this.categories = await this.$strapi.find('categories');
   },

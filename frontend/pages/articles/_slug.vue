@@ -1,7 +1,6 @@
 <template>
   <div class="p-article">
-    <Header />
-    <HomeCover :cover="getStrapiMedia(article.image.url)" />
+    <HomeCover />
     <div class="l-content">
       <p class="text-2xl font-medium text-gray-900 mb-4">
         {{ article.title }}
@@ -18,8 +17,8 @@
 
 <script>
 import moment from 'moment';
-import { getStrapiMedia } from '../../utils/medias';
-import { getMetaTags } from '../../utils/seo';
+import { getStrapiMedia } from '@/utils/medias';
+import { getMetaTags } from '@/utils/seo';
 
 export default {
   async asyncData({ $strapi, params }) {
